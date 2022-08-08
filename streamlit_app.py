@@ -39,6 +39,6 @@ def predict(dt,th):
 output = predict(dt,th)
 st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
 #a = json.loads(str(y["weather"])[1:len(str(y["weather"]))-1])
-st.title(str(y["weather"][0]['id']))
+st.title(str(y["weather"][0]['id'])[0:1])
 
 #https://api.openweathermap.org/data/2.5/weather?lat={40.988925}&lon={29.038308}&appid={53609485ee8d32929ce452d8cdb1f82e}
