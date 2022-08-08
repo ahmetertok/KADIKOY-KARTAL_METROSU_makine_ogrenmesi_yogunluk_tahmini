@@ -16,14 +16,14 @@ st.title('M4 Metrosu yoğunluğu')
 
 d = st.date_input('Lütfen metroya bineceğiniz tarihi seçin.')
 dt = pd.to_datetime(d).weekday()
-st.write('Seçilen tarih: ',dt)
+#st.write('Seçilen tarih: ',dt)
 
 t =  st.time_input('Lütfen metroya bineceğiniz zamanı seçin')
 th = t.hour
 #tm = t.minute
 
 #tt = round(th + (tm / 60), 1)
-st.write('Seçilen saat: ', th)
+#st.write('Seçilen saat: ', th)
 
 def predict(dt,th):
   x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
