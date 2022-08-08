@@ -38,7 +38,7 @@ def predict(dt,th):
     dict['rain']=1
   X_predict= X_predict.append(dict, ignore_index = True)
   prediction = loaded_model.predict(X_predict)
-  return int((int(prediction)*100)/22742)
+  return int((int(prediction)*100)/15000)
 
 output = predict(dt,th)
 st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
