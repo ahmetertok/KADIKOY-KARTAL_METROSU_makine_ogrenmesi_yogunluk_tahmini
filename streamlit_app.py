@@ -7,10 +7,6 @@ import os, time
 import requests
 import json
 
-
-x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
-y = json.loads(x.text)
-
 os.environ['TZ'] = 'Turkey'
 time.tzset()
 
@@ -30,6 +26,8 @@ th = t.hour
 st.write('Seçilen saat: ', th)
 
 def predict(dt,th):
+  x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
+  y = json.loads(x.text)
   X_predict = pd.DataFrame()
   dict = {'fusedhour':th,  'weekDay': dt, 'AVERAGE_SPEED':50, 'temp':float(y["main"]['temp']), 'rain':0, 'rain,snow':0, 'snow':0}
   if str(y["weather"][0]['id'])[0:1]==6:
@@ -43,6 +41,6 @@ def predict(dt,th):
 output = predict(dt,th)
 st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
 #a = json.loads(str(y["weather"])[1:len(str(y["weather"]))-1])
-st.title(str(y["weather"][0]['id'])[0:1])
+#st.title(str(y["weather"][0]['id'])[0:1])
 
 #https://api.openweathermap.org/data/2.5/weather?lat={40.988925}&lon={29.038308}&appid={53609485ee8d32929ce452d8cdb1f82e}
