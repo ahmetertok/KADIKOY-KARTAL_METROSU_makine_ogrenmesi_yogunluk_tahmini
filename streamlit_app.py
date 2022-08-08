@@ -9,6 +9,7 @@ import json
 
 
 x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
+y = json.loads(x.text)
 
 os.environ['TZ'] = 'Turkey'
 time.tzset()
@@ -38,6 +39,6 @@ def predict(dt,th):
 output = predict(dt,th)
 st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
 
-st.title(x.text)
+st.title(y["temp"])
 
 #https://api.openweathermap.org/data/2.5/weather?lat={40.988925}&lon={29.038308}&appid={53609485ee8d32929ce452d8cdb1f82e}
