@@ -4,6 +4,7 @@ import pandas as pd
 import datetime
 import pickle
 import os, time
+import requests
 
 os.environ['TZ'] = 'Turkey'
 time.tzset()
