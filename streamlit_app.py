@@ -5,6 +5,7 @@ import datetime
 import pickle
 import os, time
 import requests
+import json
 
 
 x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
