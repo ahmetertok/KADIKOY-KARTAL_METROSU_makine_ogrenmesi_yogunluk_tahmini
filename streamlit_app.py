@@ -10,5 +10,10 @@ time.tzset()
 
 loaded_model = pickle.load(open('model.sav','rb'))
 
+
+d = st.date_input('Lütfen metroya bineceğiniz tarihi seçin.')
+dt = pd.to_datetime(d).weekday()
+
+
 st.title('deneme')
 
