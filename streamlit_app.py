@@ -7,7 +7,7 @@ import os, time
 import requests
 
 
-x = requests.get('https://w3schools.com/python/demopage.htm')
+x = requests.get('https://api.openweathermap.org/data/2.5/weather?lat=40.988925&lon=29.038308&appid=53609485ee8d32929ce452d8cdb1f82e&units=metric')
 
 os.environ['TZ'] = 'Turkey'
 time.tzset()
@@ -38,3 +38,5 @@ output = predict(dt,th)
 st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
 
 st.title(x.text)
+
+#https://api.openweathermap.org/data/2.5/weather?lat={40.988925}&lon={29.038308}&appid={53609485ee8d32929ce452d8cdb1f82e}
