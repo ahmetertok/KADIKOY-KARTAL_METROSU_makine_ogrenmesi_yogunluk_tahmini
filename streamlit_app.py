@@ -39,7 +39,7 @@ def predict(dt,th):
   return int(prediction)
 
 output = predict(dt,th)
-st.title("Metro vardığınızda %"+ str((int(output)*100)/15000) +" yoğun olacak.")
+st.title("Metro vardığınızda %"+ str(int((int(output)*100)/15000)) +" yoğun olacak.")
 st.write("Seçilen tarihte ~"+str(output)+" yolcu var.")
 #a = json.loads(str(y["weather"])[1:len(str(y["weather"]))-1])
 #st.title(str(y["weather"][0]['id'])[0:1])
