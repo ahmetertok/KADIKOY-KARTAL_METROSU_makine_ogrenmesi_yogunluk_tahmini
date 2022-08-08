@@ -6,6 +6,9 @@ import pickle
 import os, time
 import requests
 
+
+x = requests.get('https://w3schools.com/python/demopage.htm')
+
 os.environ['TZ'] = 'Turkey'
 time.tzset()
 
@@ -32,5 +35,6 @@ def predict(dt,th):
   return int((int(prediction)*100)/22742)
 
 output = predict(dt,th)
-st.title("Metroda vardığınızda %"+ str(output) +" yoğun olacak.")
+st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
 
+st.title(x.text)
