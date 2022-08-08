@@ -36,10 +36,11 @@ def predict(dt,th):
     dict['rain']=1
   X_predict= X_predict.append(dict, ignore_index = True)
   prediction = loaded_model.predict(X_predict)
-  return int((int(prediction)*100)/15000)
+  return int(prediction)
 
 output = predict(dt,th)
-st.title("Metro vardığınızda %"+ str(output) +" yoğun olacak.")
+st.title("Metro vardığınızda %"+ str((int(output)*100)/15000) +" yoğun olacak.")
+st.write("Seçilen tarihte ~"+str(output)+" yolcu var.")
 #a = json.loads(str(y["weather"])[1:len(str(y["weather"]))-1])
 #st.title(str(y["weather"][0]['id'])[0:1])
 
