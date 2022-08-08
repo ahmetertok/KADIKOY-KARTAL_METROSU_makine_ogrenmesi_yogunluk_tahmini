@@ -28,8 +28,8 @@ def predict(dt,th):
   dict = {'fusedhour':th,  'weekDay': dt, 'AVERAGE_SPEED':50, 'temp':24.0, 'rain':0, 'rain,snow':0, 'snow':0}
   X_predict= X_predict.append(dict, ignore_index = True)
   prediction = loaded_model.predict(X_predict)
-  return int(prediction)
+  return int((int(prediction)*100)/22742)
 
 output = predict(dt,th)
-st.title("Metroda vardığınızda "+ str(output) +" kişi olacak.")
+st.title("Metroda vardığınızda %"+ str(output) +" yoğun olacak.")
 
