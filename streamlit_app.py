@@ -31,7 +31,7 @@ def predict(dt,th):
   y2 = json.loads(x2.text)
   y = json.loads(x.text)
   X_predict = pd.DataFrame()
-  dict = {'fusedhour':th,  'weekDay': dt, 'AVERAGE_SPEED':y2[0]['TrafficIndex'], 'temp':float(y["main"]['temp']), 'rain':0, 'rain,snow':0, 'snow':0}
+  dict = {'fusedhour':th,  'weekDay': dt, 'trafficIndex':y2[0]['TrafficIndex'], 'temp':float(y["main"]['temp']), 'rain':0, 'rain,snow':0, 'snow':0}
   if str(y["weather"][0]['id'])[0:1]=='6':
     dict['snow']=1
   if str(y["weather"][0]['id'])[0:1]=='5':
